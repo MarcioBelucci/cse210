@@ -9,10 +9,24 @@ public class PromptGenerator
         "Reflect on an accomplishment that you achieved today and how it made you feel."
     };
 
+    private List<string> _usedPrompts = new List<string>();
+
     public string GetRandomPrompt()
     {
+        if (_prompts.Count == 0)
+        {
+            _prompts.AddRange(_usedPrompts);
+            _usedPrompts.Clear();
+        }
+        
         Random random = new Random();
         int index = random.Next(_prompts.Count);
-        return _prompts[index];
+        string prompt = _prompts[index];
+
+        _usedPrompts.Add(prompt);
+        _prompts.RemoveAt(index);
+
+        return prompt;
     }
+
 }

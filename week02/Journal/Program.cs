@@ -1,3 +1,4 @@
+// For the exceeding requirements, the PromptGenerator never repeats a prompt until all of them have been used. Used prompts are moved to a separate list, which is restored when the available list is empty.
 using System;
 
 class Program
