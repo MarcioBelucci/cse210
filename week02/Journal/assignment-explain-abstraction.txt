@@ -1,0 +1,26 @@
+Abstraction is the principle of hiding the internal details and showing only what is necessary. It provides a clean, readable, and maintainable system. If it is applied, the system can be modified or updated without changing most of the code, giving the developer better control over which parts he needs to change.
+As an example, Program.cs, which uses the PromptGenerator class, doesn’t need to know anything about the list, random selections, or controlling the repetition; it only needs to call GetRandomPrompt().
+To exceed the requirements of this weekly project, I added a repetition control to the PromptGenerator class without changing anything in Program.cs. 
+Here is the code snippet from the project:
+private List<string> _usedPrompts = new List<string>();
+
+    public string GetRandomPrompt()
+    {
+        if (_prompts.Count == 0)
+        {
+            _prompts.AddRange(_usedPrompts);
+            _usedPrompts.Clear();
+        }
+        
+        Random random = new Random();
+        int index = random.Next(_prompts.Count);
+        string prompt = _prompts[index];
+
+        _usedPrompts.Add(prompt);
+        _prompts.RemoveAt(index);
+
+        return prompt;
+    }
+
+With the new member variable _usedPrompts, the system can identify which prompts are already used, showing only the remaining prompts. 
+
