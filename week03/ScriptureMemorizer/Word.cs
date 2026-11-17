@@ -6,7 +6,7 @@ public class Word
     private string _text;
     private bool _isHidden;
 
-    public Word()
+    public Word(string text)
     {
         
     }
@@ -21,13 +21,13 @@ public class Word
         
     }
 
-    public void IsHidden()
+    public bool IsHidden()
     {
-        
+        return false;
     }
 
-    public void GetDisplayText()
+    public string GetDisplayText()
     {
-        
+        return "";
     }
 }

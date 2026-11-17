@@ -1,9 +1,11 @@
+using System.Runtime.InteropServices;
+
 public class Scripture
 {
-    private string _reference;
-    private List _words;
+    private Reference _reference;
+    private List<Word> _words;
 
-    public Reference()
+    public Scripture(Reference reference, string text)
     {
         
     }
@@ -13,13 +15,13 @@ public class Scripture
         
     }
 
-    public void GetDisplayText()
+    public string GetDisplayText()
     {
-        
+        return "";
     }
 
-    public void IsCompletelyHidden()
+    public bool IsCompletelyHidden()
     {
-        
+        return false;
     }
 }
