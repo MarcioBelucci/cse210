@@ -7,17 +7,31 @@ public class Scripture
 
     public Scripture(Reference reference, string text)
     {
-        
+        _reference = reference;
+        _words = new List<Word>();
+        string[] parts = text.Split(' ');
+        foreach (string part in parts)
+        {
+            Word word = new Word(part);
+            _words.Add(new Word(part));
+        }
     }
 
     public void HideRandomWords(int numberToHide)
     {
-        
+
     }
 
     public string GetDisplayText()
     {
-        return "";
+        string result = $"{_reference.GetDisplayText()} ";
+
+        foreach (Word word in _words)
+        {
+            result = result + word.GetDisplayText() + " ";
+        }
+
+        return result;
     }
 
     public bool IsCompletelyHidden()
