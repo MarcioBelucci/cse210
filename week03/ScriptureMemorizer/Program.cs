@@ -1,3 +1,4 @@
+// For the exceeding requirements: In the HideRandomWords method of the Scripture class, I added a check so that only words that are still visible are chosen to be hidden. This way, each round always hides the requested number of words and never wastes an attempt on a word that is already hidden.
 using System;
 
 class Program
