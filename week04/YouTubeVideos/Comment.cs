@@ -11,11 +11,11 @@ public class Comment
 
     public string GetName()
     {
-        
+        return _name;
     }
     
     public string GetText()
     {
-        
+        return _text;
     }
 }

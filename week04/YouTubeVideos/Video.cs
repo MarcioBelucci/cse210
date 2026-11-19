@@ -12,11 +12,11 @@ public class Video
         _title = title;
         _author = author;
         _length = length;
+        _comments = new List<Comment>();
     }
 
-    public void AddComment(comment)
+    public void AddComment(Comment comment)
     {
-        _comments = new List<Comment>();
         _comments.Add(comment);
         
     }
@@ -26,23 +26,23 @@ public class Video
         return _comments.Count;
     }
 
-    public string GetTilet()
+    public string GetTitle()
     {
-        
+        return _title;
     }
 
     public string GetAuthor()
     {
-        
+        return _author;
     }
 
     public int GetLength()
     {
-
+        return _length;
     }
 
     public List<Comment> GetComments()
     {
-        
+        return _comments;
     }
 }
