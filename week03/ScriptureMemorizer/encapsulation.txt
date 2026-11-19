@@ -1,0 +1,22 @@
+Encapsulation is a principle of Object-Oriented Programming defined by restricting direct access to internal details from outside the class. The major benefit of encapsulation is information hiding, which minimizes interdependencies between different parts of a program. By preventing external code from directly altering internal variables, we protect our data from accidental corruption. Furthermore, if we need to modify how a class stores or processes data internally, we can do so without breaking other parts of the application that rely on the public interface.
+
+In C#, encapsulation is applied using access modifiers. Attributes are marked as private to restrict external access, while public methods (including constructors, action methods, getters, and setters) provide controlled, safe interaction. 
+The code example: 
+public class Account 
+{ 
+    private int _balance = 0;
+
+    public void Deposit(int amount)
+    {
+        if (amount &gt; 0)
+        {
+            _balance += amount;
+        }
+    }
+
+    public int GetBalance()
+    {
+        return _balance;
+    }
+
+}
