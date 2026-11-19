@@ -1,11 +1,11 @@
 public class Product
 {
     private string _name;
-    private int _productId;
+    private string _productId;
     private double _price;
     private int _quantity;
 
-    public Product(string name, int id, double price, int quantity)
+    public Product(string name, string id, double price, int quantity)
     {
         _name = name;
         _productId = id;
@@ -23,7 +23,7 @@ public class Product
         return _name;
     }
 
-    public int GetProductId()
+    public string GetProductId()
     {
         return _productId;
     }
