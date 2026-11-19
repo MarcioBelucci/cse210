@@ -12,14 +12,19 @@ public class Scripture
         string[] parts = text.Split(' ');
         foreach (string part in parts)
         {
-            Word word = new Word(part);
-            _words.Add(new Word(part));
+            _words.Add(new Word (part));
         }
     }
 
     public void HideRandomWords(int numberToHide)
     {
+        Random random = new Random();
 
+        for (int i = 0; i < numberToHide; i++)
+        {
+            int index = random.Next(_words.Count);
+            _words[index].Hide();
+        }
     }
 
     public string GetDisplayText()
@@ -36,6 +41,14 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        return false;
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
